@@ -55,7 +55,7 @@ jobs:
         run: |
           uv venv /tmp/test-env
           uv pip install --python /tmp/test-env/bin/python dist/*.whl
-          /tmp/test-env/bin/siat --help
+          /tmp/test-env/bin/sait --help
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
