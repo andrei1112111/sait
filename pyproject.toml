@@ -1,0 +1,36 @@
+[project]
+name = "sait"
+version = "0.1.0"
+description = "Simple AI Tool (sait) is a small CLI utility using local lightweight models or APIs for quick everyday tasks."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "click>=8.5.0",
+    "rich>=15.0.0",
+]
+authors = [
+    { name = "Tishkin Andrei", email = "atishkin060705@gmail.com" },
+]
+keywords = ["cli", "tool", "ai tool", "local llm"]
+license = { text = "MIT" }
+
+[project.scripts]
+sait = "sait.main:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.16.8",
+]
+
+[tool.pytest.ini_options]
+minversion = "9.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_functions = ["test_*"]
+pythonpath = ["src"]
+addopts = ["-vv"]
